@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventItem" customModule="countdown_timer_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="checkmarkImageView" destination="o1n-sT-HHo" id="LYL-06-b50"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="mTT-Yh-cPe"/>
+                <outlet property="countdownLabel" destination="qhp-NA-TGl" id="UZf-6c-hFI"/>
+                <outlet property="countdownView" destination="WSt-y1-u2E" id="WdD-yv-mpZ"/>
+                <outlet property="countdownViewWidthConstraint" destination="Xvw-U2-t4y" id="7hE-if-Ogq"/>
+                <outlet property="dueDateLabel" destination="xom-12-fqJ" id="k3z-3M-03o"/>
+                <outlet property="mainView" destination="IZs-2Z-58J" id="IHi-fx-rwm"/>
+                <outlet property="titleLabel" destination="3Bo-CB-Q9L" id="uVS-z2-JfX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZs-2Z-58J">
+                    <rect key="frame" x="10" y="0.0" width="580" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Event title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-CB-Q9L">
+                            <rect key="frame" x="20" y="20" width="240" height="26.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xom-12-fqJ">
+                            <rect key="frame" x="20" y="56.5" width="240" height="83.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSt-y1-u2E">
+                            <rect key="frame" x="280" y="10" width="290" height="130"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ITG-kE-qoq">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhp-NA-TGl">
+                                        <rect key="frame" x="10" y="49.5" width="270" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="o1n-sT-HHo">
+                                        <rect key="frame" x="130" y="50.5" width="30" height="29"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Izl-nS-PFn"/>
+                                            <constraint firstAttribute="height" constant="30" id="iwi-NZ-dHg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="o1n-sT-HHo" firstAttribute="centerX" secondItem="ITG-kE-qoq" secondAttribute="centerX" id="YVz-6M-eQE"/>
+                                    <constraint firstAttribute="trailing" secondItem="qhp-NA-TGl" secondAttribute="trailing" constant="10" id="ggo-eI-qgp"/>
+                                    <constraint firstItem="o1n-sT-HHo" firstAttribute="centerY" secondItem="ITG-kE-qoq" secondAttribute="centerY" id="pcz-me-eie"/>
+                                    <constraint firstItem="qhp-NA-TGl" firstAttribute="centerY" secondItem="ITG-kE-qoq" secondAttribute="centerY" id="w4x-kY-iuN"/>
+                                    <constraint firstItem="qhp-NA-TGl" firstAttribute="leading" secondItem="ITG-kE-qoq" secondAttribute="leading" constant="10" id="zRj-zf-V7z"/>
+                                </constraints>
+                            </view>
+                            <blurEffect style="regular"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3Bo-CB-Q9L" firstAttribute="leading" secondItem="IZs-2Z-58J" secondAttribute="leading" constant="20" id="3ds-BW-h3X"/>
+                        <constraint firstItem="3Bo-CB-Q9L" firstAttribute="top" secondItem="IZs-2Z-58J" secondAttribute="top" constant="20" id="78m-0c-1Sh"/>
+                        <constraint firstItem="WSt-y1-u2E" firstAttribute="leading" secondItem="xom-12-fqJ" secondAttribute="trailing" constant="20" id="QZ6-cv-7Te"/>
+                        <constraint firstItem="WSt-y1-u2E" firstAttribute="leading" secondItem="3Bo-CB-Q9L" secondAttribute="trailing" constant="20" id="Uww-7R-Eus"/>
+                        <constraint firstItem="WSt-y1-u2E" firstAttribute="width" secondItem="IZs-2Z-58J" secondAttribute="width" multiplier="0.5" id="Xvw-U2-t4y"/>
+                        <constraint firstAttribute="bottom" secondItem="WSt-y1-u2E" secondAttribute="bottom" constant="10" id="b3v-dC-jKv"/>
+                        <constraint firstItem="xom-12-fqJ" firstAttribute="top" secondItem="3Bo-CB-Q9L" secondAttribute="bottom" constant="10" id="fXU-dz-mO1"/>
+                        <constraint firstItem="WSt-y1-u2E" firstAttribute="top" secondItem="IZs-2Z-58J" secondAttribute="top" constant="10" id="hBg-dd-0Sp"/>
+                        <constraint firstAttribute="trailing" secondItem="WSt-y1-u2E" secondAttribute="trailing" constant="10" id="iTo-4B-PGY"/>
+                        <constraint firstItem="xom-12-fqJ" firstAttribute="leading" secondItem="IZs-2Z-58J" secondAttribute="leading" constant="20" id="tsx-nh-Kch"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="w9G-Wi-NoD"/>
+                        <constraint firstAttribute="bottom" secondItem="xom-12-fqJ" secondAttribute="bottom" constant="10" id="wZB-Ht-hsJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IZs-2Z-58J" secondAttribute="trailing" constant="10" id="IjN-p0-CSt"/>
+                <constraint firstItem="IZs-2Z-58J" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="eXY-Jj-IUp"/>
+                <constraint firstAttribute="bottom" secondItem="IZs-2Z-58J" secondAttribute="bottom" id="is6-Ev-Lwe"/>
+                <constraint firstItem="IZs-2Z-58J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ylf-ap-mk6"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="17.39130434782609" y="-200.22321428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
