@@ -15,15 +15,18 @@ protocol EventItemViewModelOutput {
     var remainingTime: String { get }
     var didUpdate: (() -> Void)? { get set }
     var didUpdateTimer: (() -> Void)? { get set }
+    var didRemoveEvent: (() -> Void)? { get set }
 }
 
 protocol EventItemViewModelInput {
     func stopTimer()
+    func removeItem()
 }
 
 final class EventItemViewModel: EventItemViewModelOutput {
     
     private var timer: Timer?
+    private let service = StorageManager.shared
     
     var objectId: NSManagedObjectID
     var name: String
@@ -34,6 +37,7 @@ final class EventItemViewModel: EventItemViewModelOutput {
     
     var didUpdate: (() -> Void)?
     var didUpdateTimer: (() -> Void)?
+    var didRemoveEvent: (() -> Void)?
     
     init(name: String, date: Date, id: NSManagedObjectID) {
         self.name = name
@@ -60,6 +64,10 @@ extension EventItemViewModel: EventItemViewModelInput {
     func stopTimer() {
         guard let timer = self.timer else { return }
         timer.invalidate()
+    }
+    
+    func removeItem() {
+        self.didRemoveEvent?()
     }
     
 }

@@ -46,6 +46,14 @@ class EventItem: UIView {
                 self?.hideTimer()
             }
         }
+        
+        self.viewModel?.didRemoveEvent = { [weak self] in
+            UIView.animate(withDuration: 1, animations: {
+                self?.isHidden = true
+            }, completion: { success in
+                self?.removeFromSuperview()
+            })
+        }
     }
     
     private func commonInit() {

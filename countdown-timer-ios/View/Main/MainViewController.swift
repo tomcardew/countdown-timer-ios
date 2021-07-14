@@ -51,8 +51,30 @@ class MainViewController: UIViewController {
             let view = EventItem()
             let vm = EventItemViewModel(name: event.value(forKey: "name") as! String, date: event.value(forKey: "date") as! Date, id: event.objectID)
             view.initialize(with: vm)
+            let gesture = SpecialTapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+            gesture.eventItemViewModel = vm
+            view.addGestureRecognizer(gesture)
             stackView.addArrangedSubview(view)
         }
     }
+    
+    @objc func handleTap(sender: SpecialTapGestureRecognizer) {
+        self.showSystemAlert(title: sender.eventItemViewModel?.name ?? "", message: "What actions you want to take with this event?", actions: [UIAlertAction(title: "Remove", style: .destructive, handler: {_ in
+            self.handleDeleteEvent(from: sender.eventItemViewModel!)
+        }), UIAlertAction(title: "Close", style: .default, handler: nil)])
+    }
+    
+    private func handleDeleteEvent(from vm: EventItemViewModel) {
+        self.showSystemAlert(title: "Delete event", message: "Are you sure? There's no way back.", actions: [UIAlertAction(title: "Yes, I am", style: .destructive, handler: {_ in
+            self.viewModel.deleteEvent(id: vm.objectId)
+            vm.removeItem()
+        }), UIAlertAction(title: "Cancel", style: .default, handler: nil)])
+    }
 
+}
+
+class SpecialTapGestureRecognizer: UITapGestureRecognizer {
+    
+    var eventItemViewModel: EventItemViewModel?
+    
 }

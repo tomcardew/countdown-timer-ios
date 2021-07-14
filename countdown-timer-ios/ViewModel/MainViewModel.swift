@@ -12,6 +12,7 @@ protocol MainViewModelInput {
     func viewDidLoad()
     func addEvent(id: Int, name: String, date: Date)
     func reorderEvents()
+    func deleteEvent(id: NSManagedObjectID)
 }
 
 protocol MainViewModelOutput {
@@ -22,6 +23,7 @@ protocol MainViewModelOutput {
     var eventsDidChange: (() -> Void)? { get set }
     var loadingDidChange: (() -> Void)? { get set }
     var errorDidChange: (() -> Void)? { get set }
+    var deletionDidSucceed: (() -> Void)? { get set }
 }
 
 final class MainViewModel: MainViewModelOutput {
@@ -49,6 +51,7 @@ final class MainViewModel: MainViewModelOutput {
     var eventsDidChange: (() -> Void)?
     var loadingDidChange: (() -> Void)?
     var errorDidChange: (() -> Void)?
+    var deletionDidSucceed: (() -> Void)?
     
 }
 
@@ -90,6 +93,17 @@ extension MainViewModel: MainViewModelInput {
             }
         }
         self.events = newEvents
+    }
+    
+    func deleteEvent(id: NSManagedObjectID) {
+        storage.deleteEvent(with: id, completion: { result in
+            switch(result) {
+            case .success(_):
+                self.viewDidLoad()
+            case .failure(let error):
+                self.error = "Couldn't delete item with id: \(error)"
+            }
+        })
     }
     
     

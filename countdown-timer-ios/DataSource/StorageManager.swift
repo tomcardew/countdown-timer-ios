@@ -13,6 +13,7 @@ final class StorageManager {
     enum StorageErrors: Error {
         case appDelegateNotFound
         case savingError
+        case objectNotFound(NSManagedObjectID)
     }
     
     static let shared = StorageManager()
@@ -79,6 +80,29 @@ final class StorageManager {
             completion?(.success(events))
         } catch {
             completion?(.failure(error))
+        }
+    }
+    
+    func deleteEvent(with id: NSManagedObjectID, completion: ((Result<NSManagedObjectID, Error>) -> Void)?) {
+        if appDelegate == nil {
+            guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+                completion?(.failure(StorageErrors.appDelegateNotFound))
+                return
+            }
+            self.appDelegate = delegate
+        }
+        let managedContext = appDelegate!.persistentContainer.viewContext
+        do {
+            let object = try managedContext.existingObject(with: id)
+            managedContext.delete(object)
+            do {
+                try managedContext.save()
+                completion?(.success(id))
+            } catch {
+                completion?(.failure(error))
+            }
+        } catch {
+            completion?(.failure(StorageErrors.objectNotFound(id)))
         }
     }
     
