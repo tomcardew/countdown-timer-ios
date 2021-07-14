@@ -13,7 +13,6 @@
 		8485E237269F295300ABB173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8485E235269F295300ABB173 /* LaunchScreen.storyboard */; };
 		8485E240269F297300ABB173 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E23F269F297300ABB173 /* MainViewController.swift */; };
 		8485E242269F297D00ABB173 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8485E241269F297D00ABB173 /* Main.storyboard */; };
-		8485E245269F2BF000ABB173 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E244269F2BF000ABB173 /* MainViewModel.swift */; };
 		8485E24C269F2C7100ABB173 /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8485E24A269F2C7100ABB173 /* Events.xcdatamodeld */; };
 		8485E24E269F2D9200ABB173 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E24D269F2D9200ABB173 /* StorageManager.swift */; };
 		8485E252269F2EA100ABB173 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485E250269F2E9E00ABB173 /* CoreData.framework */; };
@@ -29,6 +28,7 @@
 		8485E26D269F587F00ABB173 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E26C269F587F00ABB173 /* UIStackView+Extensions.swift */; };
 		8485E26F269F5B5D00ABB173 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E26E269F5B5D00ABB173 /* UIViewController+Extensions.swift */; };
 		8485E271269F716800ABB173 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E270269F716800ABB173 /* String+Extensions.swift */; };
+		8485E273269F933200ABB173 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485E272269F933200ABB173 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,6 @@
 		8485E238269F295300ABB173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8485E23F269F297300ABB173 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8485E241269F297D00ABB173 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8485E244269F2BF000ABB173 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = ../../../../MainViewModel.swift; sourceTree = "<group>"; };
 		8485E24B269F2C7100ABB173 /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
 		8485E24D269F2D9200ABB173 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8485E250269F2E9E00ABB173 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -56,6 +55,7 @@
 		8485E26C269F587F00ABB173 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		8485E26E269F5B5D00ABB173 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8485E270269F716800ABB173 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8485E272269F933200ABB173 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +116,9 @@
 		8485E243269F2BDC00ABB173 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8485E244269F2BF000ABB173 /* MainViewModel.swift */,
 				8485E25B269F3C0A00ABB173 /* EventItemViewModel.swift */,
 				8485E268269F4AF300ABB173 /* AddEventViewModel.swift */,
+				8485E272269F933200ABB173 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -271,11 +271,11 @@
 				8485E26F269F5B5D00ABB173 /* UIViewController+Extensions.swift in Sources */,
 				8485E24E269F2D9200ABB173 /* StorageManager.swift in Sources */,
 				8485E22D269F295200ABB173 /* SceneDelegate.swift in Sources */,
-				8485E245269F2BF000ABB173 /* MainViewModel.swift in Sources */,
 				8485E25F269F448A00ABB173 /* UIColor+Extensions.swift in Sources */,
 				8485E26D269F587F00ABB173 /* UIStackView+Extensions.swift in Sources */,
 				8485E258269F3A7A00ABB173 /* EventItem.swift in Sources */,
 				8485E267269F49AB00ABB173 /* AppStoryboard.swift in Sources */,
+				8485E273269F933200ABB173 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
